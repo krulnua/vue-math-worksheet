@@ -91,6 +91,7 @@ export default {
   methods: {
     resetForm() {
       this.answers = []
+      this.score = 0
     },
     submitForm() {
       // check if the name is filled & all question answered
