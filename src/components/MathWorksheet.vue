@@ -71,7 +71,7 @@
       </el-main>
       <!-- main -->
       <!-- footer -->
-      <el-footer>
+      <el-footer class="text-center">
         <span class="fw-semibold fs-7">Copyright: www.mathinenglish.com</span>
       </el-footer>
       <!-- footer -->
