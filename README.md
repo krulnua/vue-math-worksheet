@@ -1,2 +1,6 @@
-# vue-math-worksheet
-A math worksheet project using Vue 3 and Element Plus framework
+# Math worksheet using Vue 3 and Element Plus Framework
+### Basic Vue 3 application with Element Plus and Bootstrap for the UI
+**Please run this after cloning**
+```
+npm install
+```
