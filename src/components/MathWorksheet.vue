@@ -106,11 +106,14 @@ export default {
         })
       }
 
+      this.score = 0
       // calculate the score if all question is answered & user input their name
       if(this.name != "" && this.answers.length == 12) {
         for(const key in arr) {
           let correctAnswer = Math.round(arr[key].question / 10) * 10
-          if(this.answers[key] == correctAnswer) this.score++
+          if(this.answers[key] == correctAnswer) {
+            this.score++
+          }
         }
         // inform user with the score
         ElMessageBox.alert('Congrats '+this.name+', you just scored '+this.score, 'Completed', {
