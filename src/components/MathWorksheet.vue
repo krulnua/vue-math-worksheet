@@ -62,7 +62,7 @@
             @confirm="resetForm"
           >
             <template #reference>
-              <el-button type="danger" :icon="DeleteFilled">Reset</el-button>
+              <el-button type="danger" :icon="DeleteFilled" :disabled="answers.length == 0">Reset</el-button>
             </template>
           </el-popconfirm>
           <el-button @click="submitForm" type="success" :icon="Promotion">Submit</el-button>
