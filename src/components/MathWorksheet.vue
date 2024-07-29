@@ -104,9 +104,7 @@ export default {
 
       // calculate the answered question, since the js arr length is not suitable
       let answeredQuestion = 0
-      for(let data in this.answers) {
-        answeredQuestion++
-      }
+      this.answers.forEach(() => {answeredQuestion++})
 
       if(answeredQuestion < 12) {
         ElMessageBox.alert('Please answer all the questions', 'Info', {
