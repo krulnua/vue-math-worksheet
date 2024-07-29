@@ -4,4 +4,4 @@ Please run this after cloning
 ```
 npm install
 ```
-Live demo available - https://benevolent-melomakarona-e428f5.netlify.app/
+Live demo available - [Click here](https://math-worksheet.netlify.app/)
