@@ -29,7 +29,7 @@
         <el-row :gutter="15">
           <template v-for="(item, key) in arr" :key="key">
             <!-- responsive col for each screen size -->
-            <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6" class="text-center">
+            <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6" class="text-center">
               <span class="d-block mt-5">
                 <span class="fw-bold">{{ item.question }}</span> 
                 rounded off to the nearest 10 is..
