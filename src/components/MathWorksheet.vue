@@ -23,20 +23,20 @@
           </el-col>
         </el-row>
         <!-- name & score -->
-        <!-- question -->
         <h5 class="text-center mt-3">Choose the correct answer</h5>
-        <!-- question -->
         <el-row :gutter="15">
           <template v-for="(item, key) in arr" :key="key">
             <!-- responsive col for each screen size -->
             <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="6" class="text-center">
+              <!-- question -->
               <span class="d-block mt-5">
                 <span class="fw-bold">{{ item.question }}</span> 
                 rounded off to the nearest 10 is..
               </span>
+              <!-- question -->
               <!-- answer -->
               <el-radio-group v-model="answers[key]">
-                <el-radio 
+                <el-radio-button 
                   v-for="(answer, key) in item.answer" 
                   :key="key" 
                   :value="answer" 
@@ -44,7 +44,7 @@
                   border 
                 >
                   {{ answer }}
-                </el-radio>
+                </el-radio-button>
               </el-radio-group>
               <!-- answer -->
             </el-col>
@@ -100,16 +100,24 @@ export default {
           showClose: false,
           confirmButtonText: 'OK'
         })
-      } else if(this.answers.length != 12) {
+      } 
+
+      // calculate the answered question, since the js arr length is not suitable
+      let answeredQuestion = 0
+      for(let data in this.answers) {
+        answeredQuestion++
+      }
+
+      if(answeredQuestion < 12) {
         ElMessageBox.alert('Please answer all the questions', 'Info', {
           showClose: false,
           confirmButtonText: 'OK'
         })
       }
 
-      this.score = 0
       // calculate the score if all question is answered & user input their name
-      if(this.name != "" && this.answers.length == 12) {
+      if(this.name != "" && answeredQuestion == 12) {
+        this.score = 0
         for(const key in arr) {
           let correctAnswer = Math.round(arr[key].question / 10) * 10
           if(this.answers[key] == correctAnswer) {
